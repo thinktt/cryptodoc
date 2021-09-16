@@ -1,4 +1,3 @@
-let pass = localStorage.pass
 const salt = "R6gC78ro53bzKObYVqVRoxacVGziWecKjxoCXuOh"
 
 const passBoxEl = document.getElementById('passbox')
@@ -17,7 +16,7 @@ async function doDoc() {
   const phrase = pass + '-' + dog + '-' + salt
   const hash = await sha256(phrase)
   const shortHash = hash.slice(0,16)
-  console.log(phrase)
+  // console.log(phrase)
   console.log(shortHash)
 
   await new Promise(resolve => setTimeout(resolve, 1000));
@@ -98,5 +97,4 @@ async function decrypt(message, pass) {
 
 window.reset = reset
 window.doDoc = doDoc
-window.pass = pass
 window.sha256 = sha256

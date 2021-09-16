@@ -8,6 +8,9 @@ body {
   margin-left: 20%;
 }
 
+a, a:visited {
+  color: white;
+}
 
 .center {
   display: flex;

@@ -1,19 +1,19 @@
 #! /bin/bash
 
-# prefix=$(cat ./docs/pass.txt | sha256sum | cut -c1-16)
+# prefix=$(cat ./clear/pass.txt | sha256sum | cut -c1-16)
 
-echo removing previous dist folder
-rm -rf dist
-mkdir dist
+echo removing previous docs folder
+rm -rf docs
+mkdir docs
 
 echo encrypting main markdown
-gpg -ca -o ./dist/doc.md.asc --batch --passphrase-file ./docs/pass.txt ./docs/doc.md 
+gpg -ca -o ./docs/doc.md.asc --batch --passphrase-file ./clear/pass.txt ./clear/doc.md 
 
 echo ecnrypting pictures
-cat ./docs/pic1.png | base64 | \
- gpg -ca --batch --passphrase-file ./docs/pass.txt > ./dist/pic1.png.b64.asc
-cat ./docs/pic2.png | base64 | \
- gpg -ca --batch --passphrase-file ./docs/pass.txt > ./dist/pic2.png.b64.asc
+cat ./clear/pic1.png | base64 | \
+ gpg -ca --batch --passphrase-file ./clear/pass.txt > ./docs/pic1.png.b64.asc
+cat ./clear/pic2.png | base64 | \
+ gpg -ca --batch --passphrase-file ./clear/pass.txt > ./docs/pic2.png.b64.asc
 
 echo copying all non encrypted assets from source
-cp ./src/* ./dist/
+cp ./src/* ./docs/

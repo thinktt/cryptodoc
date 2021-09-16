@@ -1,0 +1,129 @@
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #333;
+  color: #cccc;
+  margin-right: 20%;
+  margin-left: 20%;
+}
+
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+img {
+  max-width:100%;
+  max-height:100%;
+}
+
+.title {
+  font-size: 2.5rem;
+}
+
+.passbox, .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+input {
+  border: 3px solid #ccc; 
+  box-shadow: 
+    inset 0 0 8px  rgba(0,0,0,0.1),
+          0 0 16px rgba(0,0,0,0.1); 
+  padding: 10px;
+  background: #333;
+  margin: 0 0 10px 0;
+  font-size: large;
+}
+
+input:focus {
+  border: 3px solid white; 
+}
+
+input[type="password"] {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  letter-spacing: 0.125em;
+  color: #ccc;
+}
+
+
+a.button{
+  display:inline-block;
+  padding:0.2em 0.5em;
+  border:0.16em solid #FFFFFF;
+  margin:0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration:none;
+  /* text-transform:uppercase; */
+  font-size: 1.5em;
+  font-weight:400;
+  color:#cccc;
+  text-align:center;
+  transition: all 0.15s;
+  /* border:0.16em solid #ccc; */
+}
+
+a.button:hover{
+  color: white;
+  border-color:white;
+  cursor: pointer;
+}
+a.button:active{
+  color:#BBBBBB;
+  border-color:#BBBBBB;
+}
+
+.spinner {
+  display: inline-block;
+  width: 1em;
+  font-size: 1.25em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.error {
+  color: red;
+}
+
+.dead{
+  color: red;
+  transform: rotate(180deg) scaleX(1) translateY(-6px);
+}
+
+.spin {
+  animation-name: spin;
+  animation-duration: 1900ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: center; 
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+
+.loading-area { 
+  margin: auto;
+}
+
+.loading-failed {
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  border: 10px;
+  margin: auto;
+}
+

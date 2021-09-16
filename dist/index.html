@@ -1,0 +1,49 @@
+<!Doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Crypto Doc</title>
+  <meta name="description" content="Crypto Doc">
+  <link rel="icon" type="image/png" href="favicon.ico"/>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div id="app" v-cloak >
+    <div class="header">
+      <!-- <span>09-14-2021</span> -->
+      <h1 class="title">Cryto Doc</h1>
+    </div>
+    
+    <form id="passform" class="center">
+      <p>To decrypt this document enter the following</p>
+      <input placeholder="passphrase" type="password" id="passbox" name="password">
+      <input placeholder="BKK family dog" type="password" id="dogbox" name="known">
+      <a class="button" onclick="doDoc()">Decrypt</a>
+    </form>
+
+    <div id="loading-area" class="center hidden">
+      <span>Attempting to Decrypt</span> 
+      <div>
+        <span class="spinner spin">🎂</span> 
+        <span>⚖️</span>
+        <span class="spinner spin">💀</span> 
+      </div>
+    </div>
+   
+    <div id="loading-failed" class="center hidden">
+      <a class="button" onclick="reset()">Try Again</a>
+      <div class="spinner">💀</div> 
+      <div>Failed To Decrypt</div>
+    </div>
+    
+    
+    <div id="main">
+    </div>
+  </div>
+  <script src="showdown.min.js"></script>
+  <script src="openpgp.min.js"></script>
+  <script src="main.js" type="module"></script>
+</body>
+</html>

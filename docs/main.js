@@ -13,7 +13,7 @@ async function doDoc() {
   loadingEl.classList.remove('hidden')
   const pass = passBoxEl.value.replace(/(\r\n|\n|\r)/gm, "")
   const dog = dogBoxEl.value.replace(/(\r\n|\n|\r)/gm, "")
-  const phrase = pass + '-' + dog + '-' + salt
+  const phrase = pass + '-' + dog.toLowerCase() + '-' + salt
   const hash = await sha256(phrase)
   const shortHash = hash.slice(0,16)
   // console.log(phrase)
